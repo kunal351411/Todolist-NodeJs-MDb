@@ -1,0 +1,21 @@
+<%- include("header"); -%>
+
+<div class="list-box">
+  <div class="list">
+    <% if(listsCreated.length === 0){ %>
+      <h1 class="custom-list">There are no Custom Lists created yet.</h1>
+    <% } else { %>
+      <h1 class="custom-list">Here are your Custom Lists</h1>
+      <% listsCreated.forEach(function (list){ %>
+        <div class="list-item">
+          <h1><a href="/<%= list.name %>"><%= list.name %></a></h1>
+        </div>
+      <% }); %>
+    <% } %>
+    <div class="list-item">
+      <h1><a href="/">Today's List</a></h1>
+    </div>
+  </div>
+</div>
+
+<%- include("footer"); -%>
