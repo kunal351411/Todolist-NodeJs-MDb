@@ -68,9 +68,10 @@ app.get("/", function(req, res) {
         else
         {
           console.log("Successfully inserted");
+          res.redirect("/");
         }
       });
-      res.redirect("/");
+
     }
     else
     {
@@ -83,6 +84,11 @@ app.get("/", function(req, res) {
 app.get("/:customList",function(req,res)
 {
   const customListName = _.capitalize(_.lowerCase(req.params.customList));
+
+  if(customListName === "Favicon ico")
+  {
+    res.redirect("/");
+  }
 
   List.findOne({name : customListName},function(err,result)
   {
