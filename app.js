@@ -85,11 +85,6 @@ app.get("/:customList",function(req,res)
 {
   const customListName = _.capitalize(_.lowerCase(req.params.customList));
 
-  if(customListName === "Favicon ico")
-  {
-    res.redirect("/");
-  }
-
   List.findOne({name : customListName},function(err,result)
   {
     if(!result)
