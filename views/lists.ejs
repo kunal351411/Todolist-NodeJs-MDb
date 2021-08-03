@@ -8,11 +8,18 @@
       <h1 class="custom-list">Here are your Custom Lists</h1>
       <% listsCreated.forEach(function (list){ %>
         <div class="list-item">
-          <h1><a href="/<%= list.name %>"><%= list.name %></a></h1>
+          <div class="">
+            <h1><a href="/<%= list.name %>"><%= list.name %></a></h1>
+          </div>
+          <div class="">
+            <form class="" action="/delete-list" method="post">
+              <button type="submit" name="delete" value="<%= list._id %>"><img class="delete-icon" src="/images/delete.png" alt=""></button>
+            </form>
+          </div>
         </div>
       <% }); %>
     <% } %>
-    <div class="list-item">
+    <div class="list-item today">
       <h1><a href="/">Today's List</a></h1>
     </div>
   </div>

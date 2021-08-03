@@ -8,6 +8,7 @@ html {
 h1 {
   color: #fff;
   padding: 10px;
+  margin: 0px;
 }
 
 .box {
@@ -102,6 +103,7 @@ footer {
 {
   width : 40px;
   padding-left: 10px;
+  padding-top: 5px;
 }
 
 .list-checkbox{
@@ -122,15 +124,31 @@ footer {
 
 .list-item
 {
-  max-width: 300px;
-  margin: 5px auto;
+  max-width: 400px;
+  margin: 10px auto;
   background: #A683E3;
   border-radius: 5px;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  column-gap: 80px;
+  justify-content: flex-end;
 }
 
 a
 {
   color : #fff;
   text-decoration: none;
+}
+
+.delete-icon
+{
+  width : 30px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+.today
+{
+  justify-content: center;
 }

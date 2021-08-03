@@ -103,9 +103,10 @@ app.get("/:customList",function(req,res)
         else
         {
           console.log("Successfully inserted");
+          res.redirect("/" + customListName);
         }
       });
-      res.redirect("/" + customListName);
+
     }
     else{
       res.render("list",{listTitle : result.name , newListItems : result.items});
@@ -178,8 +179,24 @@ app.post("/delete", function (req,res)
     }
   });
   }
+});
 
+app.post("/delete-list",function (req,res)
+{
+  const listId = req.body.delete;
 
+  List.deleteOne({_id : listId},function (err)
+  {
+    if(err)
+    {
+      console.log(err);
+    }
+    else
+    {
+      console.log("List deleted Successfully");
+      res.redirect("/user/lists");
+    }
+  });
 });
 
 app.get("/about", function(req, res){
